@@ -9,6 +9,8 @@ TagManager:
   - Fire
   - Checkpoint
   - LevelPart
+  - Dummie
+  - Weapon
   layers:
   - Default
   - TransparentFX

@@ -32,6 +32,8 @@ public class GunScript : MonoBehaviour {
 
 	private PlayerMovementScript pmS;
 
+	public float bulletStore;
+
 	/*
 	 * Collection the variables upon awake that we need.
 	 */
@@ -54,6 +56,8 @@ public class GunScript : MonoBehaviour {
 
 		rotationLastY = mls.currentYRotation;
 		rotationLastX= mls.currentCameraXRotation;
+
+		bulletStore = bulletsIHave;
 
 	}
 
@@ -480,11 +484,6 @@ public class GunScript : MonoBehaviour {
 			yield return new WaitForSeconds (reloadChangeBulletsTime - 0.5f);//minus ovo vrijeme cekanja na yield
 			if (meeleAttack == false && pmS.maxSpeed != runningSpeed) {
 				//print ("tu sam");
-				if (player.GetComponent<PlayerMovementScript> ()._freakingZombiesSound)
-					player.GetComponent<PlayerMovementScript> ()._freakingZombiesSound.Play ();
-				else
-					print ("Missing Freaking Zombies Sound");
-				
 				if (bulletsIHave - amountOfBulletsPerLoad >= 0) {
 					bulletsIHave -= amountOfBulletsPerLoad - bulletsInTheGun;
 					bulletsInTheGun = amountOfBulletsPerLoad;

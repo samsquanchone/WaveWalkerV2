@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 //using UnityStandardAssets.ImageEffects;
 
 public enum GunStyles{
@@ -20,11 +21,11 @@ public class GunScript : MonoBehaviour {
 
 	[Header("Bullet properties")]
 	[Tooltip("Preset value to tell with how many bullets will our waepon spawn aside.")]
-	public float bulletsIHave = 20;
+	[SerializeField]public float _bulletsIHave = 20;
 	[Tooltip("Preset value to tell with how much bullets will our waepon spawn inside rifle.")]
-	public float bulletsInTheGun = 5;
+	[SerializeField] public float _bulletsInTheGun = 5;
 	[Tooltip("Preset value to tell how much bullets can one magazine carry.")]
-	public float amountOfBulletsPerLoad = 5;
+	[SerializeField] public float _amountOfBulletsPerLoad = 5;
 
 	private Transform player;
 	private Camera cameraComponent;
@@ -57,8 +58,27 @@ public class GunScript : MonoBehaviour {
 		rotationLastY = mls.currentYRotation;
 		rotationLastX= mls.currentCameraXRotation;
 
-		bulletStore = bulletsIHave;
+		bulletStore = _bulletsIHave;
 
+	}
+
+	public void InitialiseAmmo(float bulletsIhave, float bulletsInGun, float amountOfBulletsPerLoad)
+	{
+		_bulletsIHave = bulletsIhave;
+		_bulletsInTheGun = bulletsInGun;
+		_amountOfBulletsPerLoad = amountOfBulletsPerLoad;
+	}
+
+	public List<float> GetAmmoOnGunDestroyed()
+	{
+		List<float> ammoVals = new();
+		{
+			ammoVals.Add(_bulletsIHave);
+			ammoVals.Add(_bulletsInTheGun);
+			ammoVals.Add(_amountOfBulletsPerLoad);
+		};
+
+		return ammoVals;
 	}
 
 
@@ -424,7 +444,7 @@ public class GunScript : MonoBehaviour {
 	private void ShootMethod(){
 		if(waitTillNextFire <= 0 && !reloading && pmS.maxSpeed < 5){
 
-			if(bulletsInTheGun > 0){
+			if(_bulletsInTheGun > 0){
 
 				int randomNumberForMuzzelFlash = Random.Range(0,5);
 				if (bullet)
@@ -441,7 +461,7 @@ public class GunScript : MonoBehaviour {
 				RecoilMath();
 
 				waitTillNextFire = 1;
-				bulletsInTheGun -= 1;
+				_bulletsInTheGun -= 1;
 			}
 				
 			else{
@@ -465,7 +485,7 @@ public class GunScript : MonoBehaviour {
 	[Tooltip("Time that passes after reloading. Depends on your reload animation length, because reloading can be interrupted via meele attack or running. So any action before this finishes will interrupt reloading.")]
 	public float reloadChangeBulletsTime;
 	IEnumerator Reload_Animation(){
-		if(bulletsIHave > 0 && bulletsInTheGun < amountOfBulletsPerLoad && !reloading/* && !aiming*/){
+		if(_bulletsIHave > 0 && _bulletsInTheGun < _amountOfBulletsPerLoad && !reloading/* && !aiming*/){
 
 			if (reloadSound_source.isPlaying == false && reloadSound_source != null) {
 				if (reloadSound_source)
@@ -484,17 +504,17 @@ public class GunScript : MonoBehaviour {
 			yield return new WaitForSeconds (reloadChangeBulletsTime - 0.5f);//minus ovo vrijeme cekanja na yield
 			if (meeleAttack == false && pmS.maxSpeed != runningSpeed) {
 				//print ("tu sam");
-				if (bulletsIHave - amountOfBulletsPerLoad >= 0) {
-					bulletsIHave -= amountOfBulletsPerLoad - bulletsInTheGun;
-					bulletsInTheGun = amountOfBulletsPerLoad;
-				} else if (bulletsIHave - amountOfBulletsPerLoad < 0) {
-					float valueForBoth = amountOfBulletsPerLoad - bulletsInTheGun;
-					if (bulletsIHave - valueForBoth < 0) {
-						bulletsInTheGun += bulletsIHave;
-						bulletsIHave = 0;
+				if (_bulletsIHave - _amountOfBulletsPerLoad >= 0) {
+					_bulletsIHave -= _amountOfBulletsPerLoad - _bulletsInTheGun;
+					_bulletsInTheGun = _amountOfBulletsPerLoad;
+				} else if (_bulletsIHave - _amountOfBulletsPerLoad < 0) {
+					float valueForBoth = _amountOfBulletsPerLoad - _bulletsInTheGun;
+					if (_bulletsIHave - valueForBoth < 0) {
+						_bulletsInTheGun += _bulletsIHave;
+						_bulletsIHave = 0;
 					} else {
-						bulletsIHave -= valueForBoth;
-						bulletsInTheGun += valueForBoth;
+						_bulletsIHave -= valueForBoth;
+						_bulletsInTheGun += valueForBoth;
 					}
 				}
 			} else {
@@ -522,7 +542,7 @@ public class GunScript : MonoBehaviour {
 			}
 		}
 		if(mls && HUD_bullets)
-			HUD_bullets.text = bulletsIHave.ToString() + " - " + bulletsInTheGun.ToString();
+			HUD_bullets.text = _bulletsIHave.ToString() + " - " + _bulletsInTheGun.ToString();
 
 		DrawCrosshair();
 	}

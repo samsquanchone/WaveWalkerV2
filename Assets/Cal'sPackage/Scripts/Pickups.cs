@@ -36,7 +36,7 @@ public class Pickups : MonoBehaviour
             currentGun = gunInventory.currentGun;
             gunScript = currentGun.GetComponent<GunScript>();
 
-            gunScript.bulletsIHave = gunScript.bulletStore;
+            gunScript._bulletsIHave = gunScript.bulletStore;
 
             Destroy(other.gameObject);
             Debug.Log("Collide Ammo");

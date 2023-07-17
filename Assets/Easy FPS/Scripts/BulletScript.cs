@@ -29,7 +29,6 @@ public class BulletScript : MonoBehaviour {
 					Destroy(gameObject);
 				}
 				if(hit.transform.tag == "Dummie"){
-					hit.transform.gameObject.GetComponent<IEnemy>().Damage(10);
 					Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
 					Destroy(gameObject);
 				}

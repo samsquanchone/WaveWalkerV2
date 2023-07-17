@@ -20,6 +20,21 @@ public class GunInventory : MonoBehaviour {
 	[HideInInspector]
 	public float switchWeaponCooldown;
 
+	[SerializeField] public float Gun1bulletsIHave = 20;
+	[Tooltip("Preset value to tell with how much bullets will our waepon spawn inside rifle.")]
+	[SerializeField] public float Gun1bulletsInTheGun = 5;
+	[Tooltip("Preset value to tell how much bullets can one magazine carry.")]
+	[SerializeField] public float Gun1amountOfBulletsPerLoad = 15;
+
+	[SerializeField] public float Gun2bulletsIHave = 20;
+	[Tooltip("Preset value to tell with how much bullets will our waepon spawn inside rifle.")]
+	[SerializeField] public float Gun2bulletsInTheGun = 5;
+	[Tooltip("Preset value to tell how much bullets can one magazine carry.")]
+	[SerializeField] public float Gun2amountOfBulletsPerLoad = 15;
+
+
+
+
 	/*
 	 * Calling the method that will update the icons of our guns if we carry any upon start.
 	 * Also will spawn a weapon upon start.
@@ -132,14 +147,27 @@ public class GunInventory : MonoBehaviour {
 
 				currentHAndsAnimator.SetBool("changingWeapon", true);
 
+
+				List<float> currentGunAmmo = currentGun.GetComponent<GunScript>().GetAmmoOnGunDestroyed();
+
+				Gun1bulletsIHave = currentGunAmmo[0];
+				Gun1bulletsInTheGun = currentGunAmmo[1];
+				Gun1amountOfBulletsPerLoad = currentGunAmmo[2];
 				yield return new WaitForSeconds(0.8f);//0.8 time to change waepon, but since there is no change weapon animation there is no need to wait fo weapon taken down
 				Destroy(currentGun);
 
 				GameObject resource = (GameObject) Resources.Load(gunsIHave[_redniBroj].ToString());
+
 				currentGun = (GameObject) Instantiate(resource, transform.position, /*gameObject.transform.rotation*/Quaternion.identity);
+
+				
+
+
+
+				currentGun.GetComponent<GunScript>().InitialiseAmmo(Gun1bulletsIHave, Gun1bulletsInTheGun, Gun1amountOfBulletsPerLoad);
 				AssignHandsAnimator(currentGun);
 			}
-			else if(currentGun.name.Contains("Sword")){
+			else if (currentGun.name.Contains("Sword")) {
 				currentHAndsAnimator.SetBool("changingWeapon", true);
 				yield return new WaitForSeconds(0.25f);//0.5f
 
@@ -148,8 +176,8 @@ public class GunInventory : MonoBehaviour {
 				yield return new WaitForSeconds(0.6f);//1
 				Destroy(currentGun);
 
-				GameObject resource = (GameObject) Resources.Load(gunsIHave[_redniBroj].ToString());
-				currentGun = (GameObject) Instantiate(resource, transform.position, /*gameObject.transform.rotation*/Quaternion.identity);
+				GameObject resource = (GameObject)Resources.Load(gunsIHave[_redniBroj].ToString());
+				currentGun = (GameObject)Instantiate(resource, transform.position, /*gameObject.transform.rotation*/Quaternion.identity);
 				AssignHandsAnimator(currentGun);
 			}
 		}

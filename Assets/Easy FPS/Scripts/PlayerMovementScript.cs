@@ -31,9 +31,13 @@ public class PlayerMovementScript : MonoBehaviour {
 	* Raycasting for meele attacks and input movement handling here.
 	*/
 	void FixedUpdate(){
-		RaycastForMeleeAttacks ();
 
-		PlayerMovementLogic ();
+		if (GameManager.Instance.GetGameState() == GameState.Normal)
+		{
+			RaycastForMeleeAttacks();
+
+			PlayerMovementLogic();
+		}
 	}
 	/*
 	* Accordingly to input adds force and if magnitude is bigger it will clamp it.
@@ -77,6 +81,8 @@ public class PlayerMovementScript : MonoBehaviour {
 	* Handles jumping and ads the force and sounds.
 	*/
 	void Jumping(){
+
+
 		if (Input.GetKeyDown (KeyCode.Space) && grounded) {
 			rb.AddRelativeForce (Vector3.up * jumpForce);
 			if (_jumpSound)
@@ -91,9 +97,9 @@ public class PlayerMovementScript : MonoBehaviour {
 	* Update loop calling other stuff
 	*/
 	void Update(){
-		
 
-		Jumping ();
+		if (GameManager.Instance.GetGameState() == GameState.Normal)
+			Jumping ();
 
 		Crouching();
 

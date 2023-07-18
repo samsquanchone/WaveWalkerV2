@@ -26,6 +26,14 @@ public class AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentState = currentState.Process();
+        if (GameManager.Instance.GetGameState() == GameState.Normal)
+        {
+            agent.isStopped = false;
+            currentState = currentState.Process();
+        }
+        else
+        {
+            agent.isStopped = true;
+        }
     }
 }

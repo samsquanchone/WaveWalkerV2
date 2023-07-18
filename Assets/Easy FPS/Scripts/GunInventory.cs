@@ -63,7 +63,9 @@ public class GunInventory : MonoBehaviour {
 	 */
 	void Update(){
 
-		switchWeaponCooldown += 1 * Time.deltaTime;
+		if (GameManager.Instance.GetGameState() == GameState.Normal)
+
+			switchWeaponCooldown += 1 * Time.deltaTime;
 		if(switchWeaponCooldown > 1.2f && Input.GetKey(KeyCode.LeftShift) == false){
 			Create_Weapon();
 		}
@@ -95,10 +97,12 @@ public class GunInventory : MonoBehaviour {
 	 */
 	void Create_Weapon(){
 
-		/*
-		 * Scrolling wheel waepons changing
-		 */
-		if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Mouse ScrollWheel") > 0){
+
+		if (GameManager.Instance.GetGameState() == GameState.Normal)
+			/*
+			 * Scrolling wheel waepons changing
+			 */
+			if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Mouse ScrollWheel") > 0){
 			switchWeaponCooldown = 0;
 
 			currentGunCounter++;

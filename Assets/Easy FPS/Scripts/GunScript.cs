@@ -106,7 +106,9 @@ public class GunScript : MonoBehaviour {
 	*/
 	void Update(){
 
-		Animations();
+
+		if (GameManager.Instance.GetGameState() == GameState.Normal)
+			Animations();
 
 		GiveCameraScriptMySensitvity();
 
@@ -129,7 +131,9 @@ public class GunScript : MonoBehaviour {
 	*Calculation of weapon position when aiming or not aiming.
 	*/
 	void FixedUpdate(){
-		RotationGun ();
+
+		if (GameManager.Instance.GetGameState() == GameState.Normal)
+			RotationGun ();
 
 		MeeleAnimationsStates ();
 
@@ -442,7 +446,9 @@ public class GunScript : MonoBehaviour {
 	 * Creates bullets and muzzle flashes and calls for Recoil.
 	 */
 	private void ShootMethod(){
-		if(waitTillNextFire <= 0 && !reloading && pmS.maxSpeed < 5){
+
+		if (GameManager.Instance.GetGameState() == GameState.Normal)
+			if (waitTillNextFire <= 0 && !reloading && pmS.maxSpeed < 5){
 
 			if(_bulletsInTheGun > 0){
 
@@ -558,8 +564,9 @@ public class GunScript : MonoBehaviour {
 	 * Drawing the crossHair.
 	 */
 	void DrawCrosshair(){
-		GUI.color = new Color(GUI.color.r, GUI.color.g, GUI.color.b, fadeout_value);
-		if(Input.GetAxis("Fire2") == 0){//if not aiming draw
+		
+			GUI.color = new Color(GUI.color.r, GUI.color.g, GUI.color.b, fadeout_value);
+		if(Input.GetAxis("Fire2") == 0 && GameManager.Instance.GetGameState() == GameState.Normal){//if not aiming draw
 			GUI.DrawTexture(new Rect(vec2(left_pos_crosshair).x + position_x(-expandValues_crosshair.x) + Screen.width/2,Screen.height/2 + vec2(left_pos_crosshair).y, vec2(size_crosshair_horizontal).x, vec2(size_crosshair_horizontal).y), vertical_crosshair);//left
 			GUI.DrawTexture(new Rect(vec2(right_pos_crosshair).x + position_x(expandValues_crosshair.x) + Screen.width/2,Screen.height/2 + vec2(right_pos_crosshair).y, vec2(size_crosshair_horizontal).x, vec2(size_crosshair_horizontal).y), vertical_crosshair);//right
 

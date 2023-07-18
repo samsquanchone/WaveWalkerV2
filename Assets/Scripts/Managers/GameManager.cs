@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
         gameState = newState;
     }
 
+    public void GameWon()
+    {
+        SceneNavigator.Instance.MoveToScene(3);
+    }
+
     public GameState GetGameState()
     {
         GameState currentState = gameState;

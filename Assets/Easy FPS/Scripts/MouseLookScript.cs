@@ -12,7 +12,7 @@ public class MouseLookScript : MonoBehaviour
 	 */
 	void Awake()
 	{
-		Cursor.lockState = CursorLockMode.Confined;
+		Cursor.lockState = CursorLockMode.Locked;
 		myCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
 	}
 
@@ -25,18 +25,25 @@ public class MouseLookScript : MonoBehaviour
 
 
 		if (GameManager.Instance.GetGameState() == GameState.Normal)
-			MouseInputMovement();
-
-		if (Input.GetKeyDown(KeyCode.L))
 		{
 			Cursor.lockState = CursorLockMode.Locked;
+			MouseInputMovement();
 
+			if (Input.GetKeyDown(KeyCode.L))
+			{
+				Cursor.lockState = CursorLockMode.Locked;
+
+			}
+			deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+
+			if (GetComponent<PlayerMovementScript>().currentSpeed > 1)
+				HeadMovement();
 		}
-		deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
 
-		if (GetComponent<PlayerMovementScript>().currentSpeed > 1)
-			HeadMovement();
-
+		else
+		{
+			Cursor.lockState = CursorLockMode.Confined;
+		}
 	}
 
 	[Header("Z Rotation Camera")]

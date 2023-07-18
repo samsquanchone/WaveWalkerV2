@@ -10,6 +10,7 @@ public class EndSceneMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         restartButton = GameObject.Find("RestartButton").GetComponent<Button>();
         returnToMenuButton = GameObject.Find("ReturnToMenuButton").GetComponent<Button>();
 

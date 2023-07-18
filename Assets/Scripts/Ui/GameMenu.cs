@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameMenu : MonoBehaviour
 {
     GameObject gameMenu;
+    public GameObject howToPlayMenu;
 
     Button resumeButton;
     Button settingsButton;
@@ -54,7 +55,7 @@ public class GameMenu : MonoBehaviour
 
     void ShowHowToPlayGuide()
     {
-
+        howToPlayMenu.SetActive(true);
     }
 
     void ReturnToMenu()

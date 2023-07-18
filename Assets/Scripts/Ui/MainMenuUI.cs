@@ -12,6 +12,7 @@ public class MainMenuUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         playButton = GameObject.Find("PlayButton").GetComponent<Button>();
         howToPlayButton = GameObject.Find("HowToPlayButton").GetComponent<Button>();
         quitButton = GameObject.Find("QuitButton").GetComponent<Button>();

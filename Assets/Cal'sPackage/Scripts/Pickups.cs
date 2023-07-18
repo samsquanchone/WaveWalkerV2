@@ -28,6 +28,10 @@ public class Pickups : MonoBehaviour
             totalPartsPickedUp++;
             Debug.Log("Collide ShipPart");
             shipPartsUpdate.shipPartsLeft--;
+            if (totalPartsPickedUp == 4)
+            {
+                GameManager.Instance.GameWon();
+            }
         }
 
         if(other.gameObject.CompareTag("AmmoPickup"))

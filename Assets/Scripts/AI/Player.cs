@@ -27,5 +27,20 @@ public class Player : MonoBehaviour
     {
         GameManager.Instance.ResetGameScene();
     }
-  
+
+    private void Update()
+    {
+        //SandZone
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            transform.position = new Vector3(247, 2, 180);
+        }
+
+        //IceZone
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            transform.position = new Vector3(247, 2, -50);
+        }
+    }
+
 }

@@ -22,4 +22,9 @@ public class MonoBehaviourInterface : MonoBehaviour
     {
         Instantiate(obj, transform);
     }
+
+    public void StopRoutine(IEnumerator routine)
+    {
+        StopCoroutine(routine);
+    }
 }

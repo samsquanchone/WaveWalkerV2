@@ -26,6 +26,7 @@ public class State
     protected UnityEngine.AI.NavMeshAgent agent; //Provides the class with the NPCS NavMeshAgent
     protected List<Transform> patrolPositions;
 
+  
 
     float visDist = 15.0f; //Distance from where the NPC can detect the player
     float visAngle = 180.0f; //Angle at which the NPC can detect the player
@@ -81,6 +82,7 @@ public class State
 
     }
 
+ 
     public bool IsShot()
     {
         if (npc.GetComponent<EnemyHealth>().GetHealth() < 100) //Should add a max health field to health script

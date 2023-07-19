@@ -7,6 +7,7 @@ public class AttackState : State
     float rotationSpeed = 2.0f;
     GameObject npc;
     AudioSource shoot;
+    private Vector3 lastPosition;
 
     public AttackState(GameObject _npc, UnityEngine.AI.NavMeshAgent _agent, Animator _anim, Transform _player, List<Transform> _patrolTransforms)
     : base(_npc, _agent, _anim, _player, _patrolTransforms)

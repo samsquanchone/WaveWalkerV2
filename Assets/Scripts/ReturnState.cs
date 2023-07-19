@@ -29,6 +29,7 @@ public class ReturnState : State
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
+            npc.transform.rotation = Quaternion.Slerp(npc.transform.rotation, npc.GetComponent<AI>().rotation, 0.5f * Time.deltaTime);
                  nextState = new IdleState(npc, agent, anim, player, patrolPositions, false);
                  stage = EVENT.EXIT;
         }

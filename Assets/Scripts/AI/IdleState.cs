@@ -11,6 +11,7 @@ public class IdleState : State
         name = STATE.IDLE;
         npc = _npc;
         ret = shouldReturn;
+        anim = _anim;
     }
 
     //Overriding the base Enter method to define Idle behaviour 
@@ -57,7 +58,7 @@ public class IdleState : State
 
     public override void Exit()
     {
-        //anim.ResetTrigger("isIdle"); //Reseting isIdle trigger to avoid animator bugs
+        anim.ResetTrigger("isIdle"); //Reseting isIdle trigger to avoid animator bugs
         base.Exit(); //Set stage to exit
     }
 

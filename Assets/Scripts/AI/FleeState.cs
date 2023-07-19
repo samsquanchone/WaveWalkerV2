@@ -39,7 +39,7 @@ public class FleeState : State
 
     public override void Exit()
     {
-       // anim.ResetTrigger("isRunning");
+        anim.ResetTrigger("isRunning");
         base.Exit();
     }
 

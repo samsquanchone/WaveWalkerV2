@@ -17,6 +17,7 @@ public class AI : MonoBehaviour
     public Transform firePoint;
     public GameObject muzzleFlash;
     public Vector3 position;
+    public Quaternion rotation;
     State currentState;
 
     public PatrolHandler patHandler;
@@ -28,6 +29,7 @@ public class AI : MonoBehaviour
         currentState = new IdleState(this.gameObject, agent, anim, player, patHandler.patrolList, false);
 
         this.position = transform.position;
+        this.rotation = transform.rotation;
     }
 
     // Update is called once per frame

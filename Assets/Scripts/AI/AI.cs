@@ -19,7 +19,7 @@ public class AI : MonoBehaviour
     public Vector3 position;
     public Quaternion rotation;
     State currentState;
-
+    public bool isEnemyDead = false;
     public PatrolHandler patHandler;
     // Start is called before the first frame update
     void Start()
@@ -44,5 +44,17 @@ public class AI : MonoBehaviour
         {
             agent.isStopped = true;
         }
+    }
+
+    public bool isDead()
+    {
+        return isEnemyDead;
+    }
+
+    public void Dead()
+    {
+        Destroy(this);
+        isEnemyDead = true;
+      
     }
 }

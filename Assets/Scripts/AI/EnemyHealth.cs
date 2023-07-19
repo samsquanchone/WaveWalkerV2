@@ -17,6 +17,10 @@ public class EnemyHealth : MonoBehaviour, IEnemy
 
         if (_health <= 0)
         {
+
+          
+           
+            this.gameObject.GetComponent<AI>().Dead();
             gameObject.SetActive(false);
         }
          
@@ -29,6 +33,8 @@ public class EnemyHealth : MonoBehaviour, IEnemy
 
         return h;
     }
+
+
 
     // Start is called before the first frame update
     void Start()

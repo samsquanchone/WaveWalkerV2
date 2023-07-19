@@ -7,7 +7,7 @@ public class AttackState : State
     float rotationSpeed = 2.0f;
     GameObject npc;
     AudioSource shoot;
-    bool hasExited = false;
+
     public AttackState(GameObject _npc, UnityEngine.AI.NavMeshAgent _agent, Animator _anim, Transform _player, List<Transform> _patrolTransforms)
     : base(_npc, _agent, _anim, _player, _patrolTransforms)
     {
@@ -15,27 +15,28 @@ public class AttackState : State
         shoot = _npc.GetComponent<AudioSource>();
         npc = _npc;
 
-        ShootGun();
+       
     }
 
     public override void Enter()
     {
+        ShootGun();
         //anim.SetTrigger("isShooting");
         agent.isStopped = true;
        // shoot.Play();
         base.Enter();
     }
 
-    IEnumerator ShootInterval()
+    public IEnumerator ShootInterval()
     {
-        MonoBehaviourInterface.Instance.InstantiateObject(npc.GetComponent<AI>().muzzleFlash, npc.GetComponent<AI>().firePoint);
+        
         Debug.Log("Shooooooot");
         //Muzzle flash
         int hitChance = Random.Range(0, 15);
 
 
-        if (hitChance == 1) {/* Damage player  */  player.GetComponent<Player>().PlayerHit(npc.GetComponent<AI>().damage); }
-
+        if (hitChance == 1 && this.npc.GetComponent<AI>() != null) {/* Damage player  */  player.GetComponent<Player>().PlayerHit(npc.GetComponent<AI>().damage); }
+        else { yield return 0; }
         yield return new WaitForSeconds(0.15f);
         ShootGun();
        
@@ -50,11 +51,11 @@ public class AttackState : State
         npc.transform.rotation = Quaternion.Slerp(npc.transform.rotation, Quaternion.LookRotation(_direction), Time.deltaTime * rotationSpeed);
 
 
-
-
+        
         if (!CanAttackPlayer())
         {
-            hasExited = true;
+            Debug.Log("Exit attak");
+           
             MonoBehaviourInterface.Instance.StopRoutine(ShootInterval());
             nextState = new IdleState(npc, agent, anim, player, patrolPositions, false);
             stage = EVENT.EXIT;
@@ -63,14 +64,18 @@ public class AttackState : State
 
     void ShootGun()
     {
-        Debug.Log("steve seagul");
-        if(!hasExited)
-        MonoBehaviourInterface.Instance.StartRoutine(ShootInterval());
+        if (this.npc.GetComponent<AI>() != null)
+        {
+            
+                MonoBehaviourInterface.Instance.StartRoutine(ShootInterval());
+        }
     }
 
     public override void Exit()
     {
-       anim.ResetTrigger("isShooting");
+       
+        MonoBehaviourInterface.Instance.StopRoutine(ShootInterval());
+        anim.ResetTrigger("isShooting");
        // shoot.Stop();
         base.Exit();
     }

@@ -8,6 +8,7 @@ public class IdleState : State
     : base(_npc, _agent, _anim, _player, _patrolTransforms)
     {
         name = STATE.IDLE;
+        npc = _npc;
     }
 
     //Overriding the base Enter method to define Idle behaviour 
@@ -19,12 +20,25 @@ public class IdleState : State
 
     public override void Update()
     {
+
+
+
+
+
         if (Random.Range(0, 100) < 10)
         {
-            nextState = new PatrolState(npc, agent, anim, player, patrolPositions); //If random value less than 10, set state to patrol
-            stage = EVENT.EXIT; //Setting stage to exit
+          
 
-            if (CanSeePlayer())
+            if (this.npc.GetComponent<AI>().attackType == AttackType.Melee)
+            {
+
+                nextState = new PatrolState(npc, agent, anim, player, patrolPositions); //If random value less than 10, set state to patrol
+                stage = EVENT.EXIT; //Setting stage to exit
+
+
+            }
+
+             else  if (CanSeePlayer())
             {
                 nextState = new PersueState(npc, agent, anim, player, patrolPositions);
                 stage = EVENT.EXIT;

@@ -14,8 +14,9 @@ public class PersueState : State
 
     public override void Enter()
     {
-       // anim.SetTrigger("isRunning");
+        anim.SetTrigger("isRunning");
         base.Enter();
+     
 
     }
 
@@ -45,7 +46,7 @@ public class PersueState : State
 
     public override void Exit()
     {
-       //anim.ResetTrigger("isRunning");
+        anim.ResetTrigger("isRunning");
         base.Exit();
     }
 

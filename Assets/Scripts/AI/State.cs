@@ -29,7 +29,7 @@ public class State
 
     float visDist = 15.0f; //Distance from where the NPC can detect the player
     float visAngle = 180.0f; //Angle at which the NPC can detect the player
-    float shootDist = 7.0f; //Distance at which the NPC can start shooting at the player 
+    float shootDist = 10.0f; //Distance at which the NPC can start shooting at the player 
 
     public State(GameObject _npc, UnityEngine.AI.NavMeshAgent _agent, Animator _anim, Transform _player, List<Transform> _patrolTransforms)
     {

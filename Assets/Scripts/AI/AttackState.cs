@@ -8,6 +8,7 @@ public class AttackState : State
     GameObject npc;
     AudioSource shoot;
     private Vector3 lastPosition;
+    bool canShoot = false;
 
     public AttackState(GameObject _npc, UnityEngine.AI.NavMeshAgent _agent, Animator _anim, Transform _player, List<Transform> _patrolTransforms)
     : base(_npc, _agent, _anim, _player, _patrolTransforms)
@@ -15,12 +16,14 @@ public class AttackState : State
         name = STATE.ATTACK;
         shoot = _npc.GetComponent<AudioSource>();
         npc = _npc;
+        
 
        
     }
 
     public override void Enter()
     {
+        canShoot = true;
         ShootGun();
         //anim.SetTrigger("isShooting");
         agent.isStopped = true;
@@ -74,7 +77,7 @@ public class AttackState : State
 
     void ShootGun()
     {
-        if (this.npc.GetComponent<AI>() != null)
+        if (this.npc.GetComponent<AI>() != null && canShoot)
         {
             
                 MonoBehaviourInterface.Instance.StartRoutine(ShootInterval());
@@ -83,7 +86,7 @@ public class AttackState : State
 
     public override void Exit()
     {
-       
+        canShoot = false;
         MonoBehaviourInterface.Instance.StopRoutine(ShootInterval());
         anim.ResetTrigger("isShooting");
        // shoot.Stop();

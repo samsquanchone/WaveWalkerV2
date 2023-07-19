@@ -31,7 +31,7 @@ public class FleeState : State
 
         if (agent.remainingDistance < 1)
         {
-            nextState = new IdleState(npc, agent, anim, player, patrolPositions);
+            nextState = new IdleState(npc, agent, anim, player, patrolPositions, false);
             stage = EVENT.EXIT;
         }
 

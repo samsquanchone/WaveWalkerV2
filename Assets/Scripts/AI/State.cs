@@ -8,7 +8,7 @@ public class State
     //Enum, providing enums for the specific states 
     public enum STATE
     {
-        IDLE, PATROL, PERSUE, ATTACK, SLEEP, FLEE, MELEE
+        IDLE, PATROL, PERSUE, ATTACK, SLEEP, FLEE, MELEE, RETURNTOORIGN
     };
 
     //Stages of the current state, provided in the form of enums

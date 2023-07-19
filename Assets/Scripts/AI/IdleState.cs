@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    public IdleState(GameObject _npc, UnityEngine.AI.NavMeshAgent _agent, Animator _anim, Transform _player, List<Transform> _patrolTransforms)
+    bool ret = false;
+    public IdleState(GameObject _npc, UnityEngine.AI.NavMeshAgent _agent, Animator _anim, Transform _player, List<Transform> _patrolTransforms, bool shouldReturn)
     : base(_npc, _agent, _anim, _player, _patrolTransforms)
     {
         name = STATE.IDLE;
         npc = _npc;
+        ret = shouldReturn;
     }
 
     //Overriding the base Enter method to define Idle behaviour 
     public override void Enter()
     {
-        //anim.SetTrigger("isIdle"); //Setting animator
+        anim.SetTrigger("isIdle"); //Setting animator
         base.Enter(); //Triggering enter method in base, which sets stage to Update
     }
 
@@ -38,7 +40,13 @@ public class IdleState : State
 
             }
 
-             else  if (CanSeePlayer())
+            if (ret && this.npc.GetComponent<AI>().attackType == AttackType.Range)
+            {
+                nextState = new ReturnState(npc, agent, anim, player, patrolPositions);
+                stage = EVENT.EXIT; //Setting stage to exit
+            }
+
+            else if (CanSeePlayer() && !ret)
             {
                 nextState = new PersueState(npc, agent, anim, player, patrolPositions);
                 stage = EVENT.EXIT;

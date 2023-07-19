@@ -35,10 +35,26 @@ public class PersueState : State
                 nextState = new MeleeState(npc, agent, anim, player, patrolPositions);
                 stage = EVENT.EXIT;
             }
+            float distance = Vector3.Distance(this.npc.GetComponent<AI>().position, this.npc.transform.position);
+            if (distance > 15 && npc.GetComponent<AI>().attackType == AttackType.Range)
+            {
+                nextState = new IdleState(npc, agent, anim, player, patrolPositions, true);
+                stage = EVENT.EXIT;
+            }
             // if can melee enemy and is melee enemy then enter attack state
             else if (!CanSeePlayer())
             {
-                nextState = new PatrolState(npc, agent, anim, player, patrolPositions);
+                switch (npc.GetComponent<AI>().attackType)
+                {
+                    case AttackType.Melee:
+                        nextState = new PatrolState(npc, agent, anim, player, patrolPositions);
+                        break;
+
+                    case AttackType.Range:
+                        nextState = new ReturnState(npc, agent, anim, player, patrolPositions);
+                        break;
+                }
+               
                 stage = EVENT.EXIT;
             }
         }

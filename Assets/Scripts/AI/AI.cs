@@ -12,10 +12,11 @@ public class AI : MonoBehaviour
     Animator anim;
     public Transform player;
     public Transform safeSpot;
-    private Transform resestSpotRanged;
+    public Transform resestSpotRanged;
 
     public Transform firePoint;
     public GameObject muzzleFlash;
+    public Vector3 position;
     State currentState;
 
     public PatrolHandler patHandler;
@@ -24,7 +25,9 @@ public class AI : MonoBehaviour
     {
         agent = this.GetComponent<NavMeshAgent>();
         anim = this.GetComponent<Animator>();
-        currentState = new IdleState(this.gameObject, agent, anim, player, patHandler.patrolList);
+        currentState = new IdleState(this.gameObject, agent, anim, player, patHandler.patrolList, false);
+
+        this.position = transform.position;
     }
 
     // Update is called once per frame

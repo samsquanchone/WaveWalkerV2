@@ -8,6 +8,7 @@ public class AttackState : State
     GameObject npc;
     AudioSource shoot;
     bool hasExited = false;
+    public Vector3 lastPosition;
     public AttackState(GameObject _npc, UnityEngine.AI.NavMeshAgent _agent, Animator _anim, Transform _player, List<Transform> _patrolTransforms)
     : base(_npc, _agent, _anim, _player, _patrolTransforms)
     {
@@ -24,6 +25,7 @@ public class AttackState : State
         agent.isStopped = true;
        // shoot.Play();
         base.Enter();
+        Debug.Log("EnterAttackState");
     }
 
     IEnumerator ShootInterval()
@@ -49,7 +51,7 @@ public class AttackState : State
 
         npc.transform.rotation = Quaternion.Slerp(npc.transform.rotation, Quaternion.LookRotation(_direction), Time.deltaTime * rotationSpeed);
 
-
+        
 
 
         if (!CanAttackPlayer())
@@ -59,6 +61,13 @@ public class AttackState : State
             nextState = new IdleState(npc, agent, anim, player, patrolPositions, false);
             stage = EVENT.EXIT;
         }
+
+        if (npc.transform.localPosition == lastPosition)
+            anim.SetBool("IsRunning2", false);
+        else
+            anim.SetBool("IsRunning2", true);
+
+        lastPosition = npc.transform.localPosition;
     }
 
     void ShootGun()
@@ -70,8 +79,10 @@ public class AttackState : State
 
     public override void Exit()
     {
-       anim.ResetTrigger("isShooting");
-       // shoot.Stop();
+        //anim.ResetTrigger("isShooting");
+        // shoot.Stop();
+        anim.SetBool("IsRunning2", false);
         base.Exit();
+        Debug.Log("ExitAttackState");
     }
 }

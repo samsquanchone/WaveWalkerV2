@@ -23,6 +23,7 @@ public class FleeState : State
         agent.speed = 6;
         agent.SetDestination(GameEnvironment.Singleton.safeSpot.transform.position);
         base.Enter();
+        Debug.Log("EnterFleeState");
 
     }
 
@@ -39,6 +40,7 @@ public class FleeState : State
 
     public override void Exit()
     {
+        Debug.Log("ExitFleeState");
         anim.ResetTrigger("isRunning");
         base.Exit();
     }

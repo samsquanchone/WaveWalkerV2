@@ -17,8 +17,10 @@ public class ReturnState : State
 
     public override void Enter()
     {
-        anim.SetTrigger("isRunning");
+        // anim.SetTrigger("isRunning");
+        anim.SetBool("IsRunning2", true);
         base.Enter();
+        Debug.Log("EnterReturnState");
 
 
     }
@@ -38,7 +40,10 @@ public class ReturnState : State
 
     public override void Exit()
     {
-        anim.ResetTrigger("isRunning");
+        // anim.ResetTrigger("isRunning");
+        // anim.SetTrigger("isRunning");
+        anim.SetBool("IsRunning2", false);
         base.Exit();
+        Debug.Log("ExitReturnState");
     }
 }

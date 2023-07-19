@@ -30,7 +30,7 @@ public class AttackState : State
         MonoBehaviourInterface.Instance.InstantiateObject(npc.GetComponent<AI>().muzzleFlash, npc.GetComponent<AI>().firePoint);
         Debug.Log("Shooooooot");
         //Muzzle flash
-        int hitChance = Random.Range(0, 4);
+        int hitChance = Random.Range(0, 15);
 
 
         if (hitChance == 1) {/* Damage player  */  player.GetComponent<Player>().PlayerHit(npc.GetComponent<AI>().damage); }
@@ -49,7 +49,7 @@ public class AttackState : State
         npc.transform.rotation = Quaternion.Slerp(npc.transform.rotation, Quaternion.LookRotation(_direction), Time.deltaTime * rotationSpeed);
         if (!CanAttackPlayer())
         {
-            nextState = new IdleState(npc, agent, anim, player, patrolPositions);
+            nextState = new IdleState(npc, agent, anim, player, patrolPositions, false);
             stage = EVENT.EXIT;
         }
     }

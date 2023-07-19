@@ -1902,8 +1902,10 @@ MonoBehaviour:
   damage: 10
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
+  resestSpotRanged: {fileID: 0}
   firePoint: {fileID: 0}
   muzzleFlash: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
   patHandler: {fileID: 1450997761}
 --- !u!195 &176988658
 NavMeshAgent:
@@ -2724,8 +2726,10 @@ MonoBehaviour:
   damage: 10
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
+  resestSpotRanged: {fileID: 0}
   firePoint: {fileID: 0}
   muzzleFlash: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
   patHandler: {fileID: 1450997761}
 --- !u!95 &238131920
 Animator:
@@ -4385,8 +4389,10 @@ MonoBehaviour:
   damage: 0
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
+  resestSpotRanged: {fileID: 0}
   firePoint: {fileID: 0}
   muzzleFlash: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
   patHandler: {fileID: 1450997761}
 --- !u!54 &375636601
 Rigidbody:
@@ -9787,8 +9793,10 @@ MonoBehaviour:
   damage: 10
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
+  resestSpotRanged: {fileID: 0}
   firePoint: {fileID: 0}
   muzzleFlash: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
   patHandler: {fileID: 1450997761}
 --- !u!195 &862097038
 NavMeshAgent:
@@ -10840,8 +10848,10 @@ MonoBehaviour:
   damage: 10
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
+  resestSpotRanged: {fileID: 0}
   firePoint: {fileID: 0}
   muzzleFlash: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
   patHandler: {fileID: 1450997761}
 --- !u!95 &952278388
 Animator:
@@ -17950,8 +17960,10 @@ MonoBehaviour:
   damage: 10
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
+  resestSpotRanged: {fileID: 0}
   firePoint: {fileID: 0}
   muzzleFlash: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
   patHandler: {fileID: 1450997761}
 --- !u!195 &1620944275
 NavMeshAgent:
@@ -20897,8 +20909,10 @@ MonoBehaviour:
   damage: 10
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
+  resestSpotRanged: {fileID: 0}
   firePoint: {fileID: 0}
   muzzleFlash: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
   patHandler: {fileID: 1450997761}
 --- !u!95 &1858580866
 Animator:
@@ -23306,8 +23320,10 @@ MonoBehaviour:
   damage: 10
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
+  resestSpotRanged: {fileID: 0}
   firePoint: {fileID: 0}
   muzzleFlash: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
   patHandler: {fileID: 1450997761}
 --- !u!195 &2099874048
 NavMeshAgent:
@@ -24225,7 +24241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8683792917598415745, guid: 9bcb1708b449f034fa93d4ca2315e1fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 322.14
+      value: 322.64
       objectReference: {fileID: 0}
     - target: {fileID: 8683792917598415745, guid: 9bcb1708b449f034fa93d4ca2315e1fc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24436,7 +24452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3171701455972038297, guid: ca554d86f6300fa44a10776749c58a82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.08
+      value: 273
       objectReference: {fileID: 0}
     - target: {fileID: 3171701455972038297, guid: ca554d86f6300fa44a10776749c58a82, type: 3}
       propertyPath: m_LocalPosition.y

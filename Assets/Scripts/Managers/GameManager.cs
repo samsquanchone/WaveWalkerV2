@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ChangeGameState(GameState newState)

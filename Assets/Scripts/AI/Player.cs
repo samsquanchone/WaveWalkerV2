@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float initialHealth;
     public float health;
+
+    public HealthUpdate healthUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +17,13 @@ public class Player : MonoBehaviour
 
     public void PlayerHit(float damage)
     {
-        health -= damage;
+        healthUI.dealDamage((int)damage);
 
-        if (health <= 0)
+        /*if (health <= 0)
         {
             PlayerDead();
         }
+        */
     }
 
     void PlayerDead()

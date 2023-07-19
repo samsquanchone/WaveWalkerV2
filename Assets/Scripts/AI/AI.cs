@@ -12,6 +12,10 @@ public class AI : MonoBehaviour
     Animator anim;
     public Transform player;
     public Transform safeSpot;
+    private Transform resestSpotRanged;
+
+    public Transform firePoint;
+    public GameObject muzzleFlash;
     State currentState;
 
     public PatrolHandler patHandler;

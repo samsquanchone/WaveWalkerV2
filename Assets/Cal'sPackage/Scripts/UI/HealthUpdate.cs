@@ -16,7 +16,7 @@ public class HealthUpdate : MonoBehaviour
         text.text = "Health; " + 100;
     }
 
-    void dealDamage(int damage)
+    public void dealDamage(int damage)
     {
         if (health > 0)
         {
@@ -34,7 +34,8 @@ public class HealthUpdate : MonoBehaviour
         if(health <= 100)
         {
             health += healthAmount;
-            text.text = "Health; " + health;
+            int newHealth = Mathf.Clamp(health, 0, 100);
+            text.text = "Health; " + newHealth;
         }
     }
     // Update is called once per frame

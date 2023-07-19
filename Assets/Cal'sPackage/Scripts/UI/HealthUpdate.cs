@@ -18,10 +18,14 @@ public class HealthUpdate : MonoBehaviour
 
     void dealDamage(int damage)
     {
-        if(health > 0)
-        {   
+        if (health > 0)
+        {
             health -= damage;
             text.text = "Health; " + health;
+        }
+        else if(health <= 0)
+        {
+            GameManager.Instance.ResetGameScene();
         }
     }
 

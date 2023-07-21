@@ -12,10 +12,12 @@ public class PatrolState : State
         name = STATE.PATROL;
         agent.speed = 2;
         agent.isStopped = false;
+      
     }
 
     public override void Enter()
     {
+        anim.SetBool("isWalking", true);
         float lastDist = Mathf.Infinity;
         for (int i = 0; i < patrolPositions.Count; i++)
         {
@@ -33,7 +35,7 @@ public class PatrolState : State
     }
     public override void Update()
     {
-        if (agent.remainingDistance < 1)
+        if (agent.remainingDistance < 1 && npc.GetComponent<AI>().enemyState == EnemyState.Normal)
         {
             int nextPos = Random.Range(0, patrolPositions.Count);
 

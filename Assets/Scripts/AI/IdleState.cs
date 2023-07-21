@@ -17,7 +17,8 @@ public class IdleState : State
     //Overriding the base Enter method to define Idle behaviour 
     public override void Enter()
     {
-        anim.SetTrigger("isIdle"); //Setting animator
+        anim.SetBool("isIdle", true); //Setting animator
+        
         base.Enter(); //Triggering enter method in base, which sets stage to Update
     }
 
@@ -25,14 +26,19 @@ public class IdleState : State
     {
 
 
+        if (npc.GetComponent<AI>().enemyState == EnemyState.EndGame)
+        {
+            nextState = new PersueState(npc, agent, anim, player, patrolPositions);
+            stage = EVENT.EXIT;
 
+        }
 
 
         if (Random.Range(0, 100) < 10)
         {
           
 
-            if (this.npc.GetComponent<AI>().attackType == AttackType.Melee)
+            if (this.npc.GetComponent<AI>().patrolType == PatrolType.Patrol)
             {
 
                 nextState = new PatrolState(npc, agent, anim, player, patrolPositions); //If random value less than 10, set state to patrol
@@ -41,7 +47,7 @@ public class IdleState : State
 
             }
 
-            if (ret && this.npc.GetComponent<AI>().attackType == AttackType.Range)
+            if (ret && this.npc.GetComponent<AI>().patrolType == PatrolType.Guard)
             {
                 nextState = new ReturnState(npc, agent, anim, player, patrolPositions);
                 stage = EVENT.EXIT; //Setting stage to exit

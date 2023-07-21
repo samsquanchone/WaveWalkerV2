@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 public enum AttackType {Melee, Range };
+public enum PatrolType {Guard, Patrol };
+
+public enum EnemyState {Normal, EndGame };
 public class AI : MonoBehaviour
 {
 
     public AttackType attackType;
+    public PatrolType patrolType;
     public float damage;
     NavMeshAgent agent;
     Animator anim;
@@ -21,7 +25,10 @@ public class AI : MonoBehaviour
     State currentState;
     public bool isEnemyDead = false;
     public PatrolHandler patHandler;
-    // Start is called before the first frame update
+    public List<Transform> transf = new();
+
+    public EnemyState enemyState { get; private set; } = EnemyState.Normal;
+    // Start is called before thfe first frame update
     void Start()
     {
         agent = this.GetComponent<NavMeshAgent>();
@@ -44,6 +51,12 @@ public class AI : MonoBehaviour
         {
             agent.isStopped = true;
         }
+    }
+
+    public void SetPlayerDestination()
+    {
+        enemyState = EnemyState.EndGame;
+        agent.SetDestination(player.position);
     }
 
     public bool isDead()

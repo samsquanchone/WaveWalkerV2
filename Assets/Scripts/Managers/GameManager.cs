@@ -23,7 +23,17 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameScene()
     {
-       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void StartFinalAssault()
+    {
+        GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Dummie");
+
+        for (int i = 0; i < enemyArray.Length; i++)
+        {
+            enemyArray[i].GetComponent<AI>().SetPlayerDestination();
+        }
     }
 
     public void ChangeGameState(GameState newState)
@@ -33,7 +43,8 @@ public class GameManager : MonoBehaviour
 
     public void GameWon()
     {
-        SceneNavigator.Instance.MoveToScene(3);
+         SceneNavigator.Instance.MoveToScene(3);
+        
     }
 
     public GameState GetGameState()

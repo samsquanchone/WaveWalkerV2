@@ -83,7 +83,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	void Jumping(){
 
 
-		if (Input.GetKeyDown (KeyCode.Space) && grounded) {
+		if (Input.GetKeyDown (KeyCode.Space) && grounded & GetComponent<Rigidbody>().velocity.magnitude == 0) {
 			rb.AddRelativeForce (Vector3.up * jumpForce);
 			if (_jumpSound)
 				_jumpSound.Play ();

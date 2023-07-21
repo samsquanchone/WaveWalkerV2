@@ -30,6 +30,8 @@ public class AttackState : State
        // shoot.Play();
         base.Enter();
         Debug.Log("EnterAttackState");
+        anim.SetBool("IsRunning2", false);
+        anim.SetBool("isShooting", true);
     }
 
     public IEnumerator ShootInterval()
@@ -55,24 +57,33 @@ public class AttackState : State
 
         npc.transform.rotation = Quaternion.Slerp(npc.transform.rotation, Quaternion.LookRotation(_direction), Time.deltaTime * rotationSpeed);
 
-        
 
-        
-        if (!CanAttackPlayer())
+
+
+        if (!CanAttackPlayer() && npc.GetComponent<AI>().patrolType == PatrolType.Patrol)
         {
             Debug.Log("Exit attak");
-           
+
             MonoBehaviourInterface.Instance.StopRoutine(ShootInterval());
             nextState = new IdleState(npc, agent, anim, player, patrolPositions, false);
             stage = EVENT.EXIT;
         }
 
+        else if (!CanAttackPlayer() && npc.GetComponent<AI>().patrolType == PatrolType.Guard) 
+        {
+            MonoBehaviourInterface.Instance.StopRoutine(ShootInterval());
+            nextState = new ReturnState(npc, agent, anim, player, patrolPositions);
+            stage = EVENT.EXIT;
+        }
+
+        /*
         if (npc.transform.localPosition == lastPosition)
             anim.SetBool("IsRunning2", false);
         else
             anim.SetBool("IsRunning2", true);
 
         lastPosition = npc.transform.localPosition;
+        */
     }
 
     void ShootGun()
@@ -88,7 +99,7 @@ public class AttackState : State
     {
         canShoot = false;
         MonoBehaviourInterface.Instance.StopRoutine(ShootInterval());
-        anim.ResetTrigger("isShooting");
+        anim.SetBool("isShooting", false);
        // shoot.Stop();
         base.Exit();
         Debug.Log("ExitAttackState");

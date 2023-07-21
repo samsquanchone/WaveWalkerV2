@@ -11,6 +11,11 @@ TagManager:
   - LevelPart
   - Dummie
   - Weapon
+  - AmmoPickup
+  - HealthPickup
+  - ShipPickup
+  - SnowZone
+  - EndGamePickUp
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     {
         initialHealth = 100;
         initialHealth = health;
+        this.gameObject.transform.localScale = new Vector3(2, 2, 2);
     }
 
     public void PlayerHit(float damage)

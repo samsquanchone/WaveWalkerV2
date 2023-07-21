@@ -24,6 +24,12 @@ public class PersueState : State
 
     public override void Update()
     {
+
+
+
+        if (npc.GetComponent<AI>().attackType == AttackType.Range) { agent.stoppingDistance = 20; }
+
+       
         agent.SetDestination(player.position);
         if (agent.hasPath)
         {
@@ -38,7 +44,7 @@ public class PersueState : State
                 stage = EVENT.EXIT;
             }
             float distance = Vector3.Distance(this.npc.GetComponent<AI>().position, this.npc.transform.position);
-            if (distance > 15 && npc.GetComponent<AI>().attackType == AttackType.Range)
+            if (distance > 10 && npc.GetComponent<AI>().patrolType == PatrolType.Guard)
             {
                 nextState = new IdleState(npc, agent, anim, player, patrolPositions, true);
                 stage = EVENT.EXIT;
@@ -46,13 +52,13 @@ public class PersueState : State
             // if can melee enemy and is melee enemy then enter attack state
             else if (!CanSeePlayer())
             {
-                switch (npc.GetComponent<AI>().attackType)
+                switch (npc.GetComponent<AI>().patrolType)
                 {
-                    case AttackType.Melee:
+                    case PatrolType.Patrol:
                         nextState = new PatrolState(npc, agent, anim, player, patrolPositions);
                         break;
 
-                    case AttackType.Range:
+                    case PatrolType.Guard:
                         nextState = new ReturnState(npc, agent, anim, player, patrolPositions);
                         break;
                 }

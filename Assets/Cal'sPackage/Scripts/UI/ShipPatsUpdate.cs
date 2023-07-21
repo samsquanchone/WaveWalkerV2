@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class ShipPatsUpdate : MonoBehaviour
 {
-    private TextMesh text;
+    public TextMesh text { get; private set; }
     public int shipPartsLeft;
+
+  
 
     
     void Start()
@@ -17,6 +19,7 @@ public class ShipPatsUpdate : MonoBehaviour
 
     void Update()
     {
+        if(shipPartsLeft > 0)
         text.text = "Ship Parts Left: " + shipPartsLeft;
     }
 

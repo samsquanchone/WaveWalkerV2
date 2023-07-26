@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -7260,7 +7260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -8130,7 +8130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -9517,7 +9517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -13762,7 +13762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -16393,7 +16393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -16906,7 +16906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -17139,7 +17139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -18267,7 +18267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -18736,7 +18736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -20314,7 +20314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -21114,7 +21114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -26298,7 +26298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -26549,7 +26549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -27415,7 +27415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -27816,7 +27816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -28962,7 +28962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -31268,7 +31268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -33404,7 +33404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -33583,7 +33583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}
@@ -34643,7 +34643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   patrolType: 1
-  damage: 10
+  damage: 5
   player: {fileID: 1067129932}
   safeSpot: {fileID: 0}
   resestSpotRanged: {fileID: 0}

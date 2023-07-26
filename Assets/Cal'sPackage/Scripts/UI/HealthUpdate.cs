@@ -21,7 +21,8 @@ public class HealthUpdate : MonoBehaviour
         if (health > 0)
         {
             health -= damage;
-            text.text = "Health; " + health;
+            int _health = Mathf.Clamp(health, 0, 100);
+            text.text = "Health; " + _health;
         }
         else if(health <= 0)
         {

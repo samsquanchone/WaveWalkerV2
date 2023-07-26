@@ -14,6 +14,7 @@ public class PersueState : State
 
     public override void Enter()
     {
+       
         // anim.SetTrigger("isRunning");
         anim.SetBool("IsRunning2", true);
         base.Enter();

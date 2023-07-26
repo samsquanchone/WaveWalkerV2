@@ -99,7 +99,7 @@ public class State
     public bool CanMeleePlayer()
     {
         Vector3 _direction = PlayerDistance();
-        if (_direction.magnitude < 0.2)
+        if (_direction.magnitude < 2)
         {
             return true;
         }

@@ -5,11 +5,15 @@ using UnityEngine.UI;
 
 public class HealthUpdate : MonoBehaviour
 {
+    
     public int health;
     private TextMesh text;
+    private Button button;
 
     void Start()
     {
+        
+
         text = gameObject.GetComponent<TextMesh>();
 
         health = 100;

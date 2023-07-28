@@ -1393,7 +1393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!195 &109248484
 NavMeshAgent:
@@ -7328,7 +7328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!95 &176988663
 Animator:
@@ -7838,7 +7838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 40
+  _health: 100
   _damage: 0
 --- !u!1 &230116128
 GameObject:
@@ -8092,7 +8092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!195 &238131918
 NavMeshAgent:
@@ -9562,7 +9562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!95 &353981964
 Animator:
@@ -10901,10 +10901,6 @@ PrefabInstance:
     - target: {fileID: 6982683727035193323, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_Name
       value: SoldierPrefab (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7212199997542665404, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
-      propertyPath: _health
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8600335180660760546, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_RootOrder
@@ -13811,7 +13807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!95 &636855255
 Animator:
@@ -14326,10 +14322,6 @@ PrefabInstance:
     - target: {fileID: 6982683727035193323, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_Name
       value: SoldierPrefab (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7212199997542665404, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
-      propertyPath: _health
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8600335180660760546, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_RootOrder
@@ -14976,7 +14968,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -16446,7 +16438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!95 &836917253
 Animator:
@@ -16959,7 +16951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!95 &862097040
 Animator:
@@ -17192,7 +17184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!95 &874045074
 Animator:
@@ -18237,7 +18229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!195 &952278386
 NavMeshAgent:
@@ -18706,7 +18698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!195 &1010427508
 NavMeshAgent:
@@ -18822,10 +18814,6 @@ PrefabInstance:
     - target: {fileID: 6982683727035193323, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_Name
       value: SoldierPrefab (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7212199997542665404, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
-      propertyPath: _health
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8600335180660760546, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_RootOrder
@@ -19901,10 +19889,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoldierPrefab (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 7212199997542665404, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
-      propertyPath: _health
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 8600335180660760546, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -20292,7 +20276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!195 &1150289023
 NavMeshAgent:
@@ -21092,7 +21076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!195 &1181150396
 NavMeshAgent:
@@ -21862,10 +21846,6 @@ PrefabInstance:
     - target: {fileID: 6982683727035193323, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_Name
       value: SoldierPrefab (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7212199997542665404, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
-      propertyPath: _health
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8600335180660760546, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_RootOrder
@@ -25581,10 +25561,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoldierPrefab (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 7212199997542665404, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
-      propertyPath: _health
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 8600335180660760546, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -26144,10 +26120,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoldierPrefab (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 7212199997542665404, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
-      propertyPath: _health
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 8600335180660760546, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -26371,8 +26343,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
+--- !u!95 &1541738104
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541738098}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!136 &1541738105
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26396,27 +26389,6 @@ CapsuleCollider:
   m_Height: 4.0072546
   m_Direction: 1
   m_Center: {x: 0.03720212, y: 1.5036273, z: 0.08347559}
---- !u!95 &1541738107
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541738098}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1555170585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26539,7 +26511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!195 &1555170590
 NavMeshAgent:
@@ -27405,7 +27377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!195 &1603819174
 NavMeshAgent:
@@ -27889,7 +27861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!95 &1620944277
 Animator:
@@ -28952,7 +28924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!195 &1710147626
 NavMeshAgent:
@@ -31258,7 +31230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!195 &1858580864
 NavMeshAgent:
@@ -32793,10 +32765,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoldierPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 7212199997542665404, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
-      propertyPath: _health
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 8600335180660760546, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -33398,7 +33366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!195 &2019020625
 NavMeshAgent:
@@ -33660,7 +33628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!95 &2026800717
 Animator:
@@ -34341,7 +34309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071479097}
   m_LocalRotation: {x: -0, y: 0.5908219, z: -0, w: 0.80680203}
-  m_LocalPosition: {x: 23.4, y: 20.71, z: 14.9}
+  m_LocalPosition: {x: 23.4, y: 46.1, z: 19.45}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34419,10 +34387,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1541738107}
+      addedObject: {fileID: 1541738105}
     - targetCorrespondingSourceObject: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1541738105}
+      addedObject: {fileID: 1541738104}
     - targetCorrespondingSourceObject: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1541738103}
@@ -34752,7 +34720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7723abad9866df44a490bfbac5e80c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 60
+  _health: 100
   _damage: 20
 --- !u!95 &2099874050
 Animator:
@@ -35614,10 +35582,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoldierPrefab (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 7212199997542665404, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
-      propertyPath: _health
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 8600335180660760546, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -35746,10 +35710,6 @@ PrefabInstance:
     - target: {fileID: 6982683727035193323, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_Name
       value: Soldier_demo
-      objectReference: {fileID: 0}
-    - target: {fileID: 7212199997542665404, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
-      propertyPath: _health
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8600335180660760546, guid: 51a4f046b5b2d124fa608994e0c6f886, type: 3}
       propertyPath: m_RootOrder

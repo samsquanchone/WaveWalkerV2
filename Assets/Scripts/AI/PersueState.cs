@@ -30,7 +30,7 @@ public class PersueState : State
 
         if (npc.GetComponent<AI>().attackType == AttackType.Range) { agent.stoppingDistance = 20; }
 
-        else if(npc.GetComponent<AI>().attackType == AttackType.Melee) { agent.stoppingDistance = 1.5f; }
+        else if(npc.GetComponent<AI>().attackType == AttackType.Melee) { agent.stoppingDistance = 2; }
 
         agent.SetDestination(player.position);
         if (agent.hasPath)

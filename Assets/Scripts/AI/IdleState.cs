@@ -17,20 +17,16 @@ public class IdleState : State
     //Overriding the base Enter method to define Idle behaviour 
     public override void Enter()
     {
-        anim.SetBool("isIdle", true); //Setting animator
-        
+        anim.SetBool("idle", true); //Setting animator
         base.Enter(); //Triggering enter method in base, which sets stage to Update
     }
 
     public override void Update()
     {
-
-
         if (npc.GetComponent<AI>().enemyState == EnemyState.EndGame)
-        {
+        {    
             nextState = new PersueState(npc, agent, anim, player, patrolPositions);
             stage = EVENT.EXIT;
-
         }
 
 
@@ -64,7 +60,7 @@ public class IdleState : State
 
     public override void Exit()
     {
-        anim.ResetTrigger("isIdle"); //Reseting isIdle trigger to avoid animator bugs
+        anim.ResetTrigger("idle"); //Reseting isIdle trigger to avoid animator bugs
         base.Exit(); //Set stage to exit
     }
 

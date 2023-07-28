@@ -37,7 +37,7 @@ public class AttackState : State
     public IEnumerator ShootInterval()
     {
         
-        Debug.Log("Shooooooot");
+      
         //Muzzle flash
         int hitChance = Random.Range(0, 15);
 
@@ -62,7 +62,7 @@ public class AttackState : State
 
         if (!CanAttackPlayer() && npc.GetComponent<AI>().patrolType == PatrolType.Patrol)
         {
-            Debug.Log("Exit attak");
+            
 
             MonoBehaviourInterface.Instance.StopRoutine(ShootInterval());
             nextState = new IdleState(npc, agent, anim, player, patrolPositions, false);

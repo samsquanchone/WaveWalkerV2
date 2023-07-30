@@ -10,6 +10,7 @@ public class PersueState : State
         name = STATE.PERSUE;
         agent.speed = 7;
         agent.isStopped = false;
+        npc = _npc;
     }
 
     public override void Enter()
@@ -19,7 +20,7 @@ public class PersueState : State
         anim.SetBool("IsRunning2", true);
         base.Enter();
         Debug.Log("EnterPersueState");
-     
+        Events.Instance.EngageEnemy(this.npc.GetComponent<AI>().attackType);
 
     }
 
@@ -76,6 +77,7 @@ public class PersueState : State
         anim.SetBool("IsRunning2", false);
         base.Exit();
         Debug.Log("ExitPersueState");
+        //stop engage music
     }
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public enum PickUpType {Ammo, Health};
 
 public class Pickups : MonoBehaviour
 {
@@ -48,6 +49,7 @@ public class Pickups : MonoBehaviour
 
             Destroy(other.gameObject);
             Debug.Log("Collide Ammo");
+            Events.Instance.OnTriggerStinger(PickUpType.Ammo);
             
         }
         if (other.gameObject.CompareTag("HealthPickup"))
@@ -57,6 +59,8 @@ public class Pickups : MonoBehaviour
             healthUpdate.heal(healthPickupHealAmount);
 
             Destroy(other.gameObject);
+            Debug.Log("Collide Health");
+            Events.Instance.OnTriggerStinger(PickUpType.Health);
         }
 
         else if (other.gameObject.CompareTag("EndGamePickUp"))

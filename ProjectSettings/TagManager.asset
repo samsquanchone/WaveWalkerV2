@@ -16,6 +16,7 @@ TagManager:
   - ShipPickup
   - SnowZone
   - EndGamePickUp
+  - CrashEnemyZone
   layers:
   - Default
   - TransparentFX

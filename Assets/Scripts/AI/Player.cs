@@ -47,4 +47,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "CrashEnemyZone")
+        {
+            Events.Instance.StartEnemyArea(AreaType.CrashArea);
+
+        }
+        if (other.gameObject.tag == "SnowZone")
+        {
+            Events.Instance.ChangeZone(AreaType.IceArea);
+            Debug.Log("Entering Snow zone");
+        }
+    }
 }

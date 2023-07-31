@@ -19,7 +19,8 @@ public class PersueState : State
         anim.SetBool("IsRunning2", true);
         base.Enter();
         Debug.Log("EnterPersueState");
-     
+        Events.Instance.EngageEnemy(this.npc.GetComponent<AI>().attackType);
+
 
     }
 

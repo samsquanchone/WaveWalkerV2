@@ -68,6 +68,7 @@ public class AI : MonoBehaviour
     {
         Destroy(this);
         isEnemyDead = true;
-      
+        Events.Instance.KilledEnemy(attackType);
+
     }
 }

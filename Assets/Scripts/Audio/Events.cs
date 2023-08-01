@@ -97,6 +97,7 @@ public class Events : MonoBehaviour, Manhattan.Listener
                 manhattan.Set("@FadeInTarget", 2);
                 manhattan.Set("@FadeOutTarget", 0);
                 manhattan.Set("@Engage", 0);
+                manhattan.Set("@FrostLevel", 0);
                 manhattan.Code("play(@FadeIn)");
                 manhattan.Code("play(@FadeOut)");
                 break;
@@ -206,8 +207,15 @@ public class Events : MonoBehaviour, Manhattan.Listener
     }
 
 
+    public void IncrimentFrostLevel()
+    {
+        manhattan.Code("@FrostLevel = @FrostLevel + 1");
+    }
 
-
+    public void EngageFrost()
+    {
+        manhattan.Set("@Engage", 1);
+    }
 
 
 }
